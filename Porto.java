@@ -47,10 +47,6 @@ public class Porto
                         return "Barca ormeggiata in posizione "+i;
                     }
                }
-               else
-               {
-                   return "I posti sono tutti occupati!";
-               }
             }
             else if(i>=50)
             {
@@ -106,10 +102,26 @@ public class Porto
             return "Il posto è vuoto!";
     }
     
-    public String arrayNaz(String paese)
+    public void arrayNaz(String paese)
     {
         Barca [] regBarchePaesi = new Barca[100];
+        int i=0, j=0;
         
-        return "";
+        for(i=0; i<100; i++)
+        {
+            if(p[i]!=null)
+            {
+                if(p[i].getNaz()==paese)
+                {
+                    regBarchePaesi[j]=p[i];
+                    j++;
+                }
+            }
+        }
+        System.out.println("Registro creato con successo!\n\n");
+        for(i=0;i<j;i++)
+        {
+            System.out.println("Barca "+i+"\n"+regBarchePaesi[i].toString());
+        }
     }
 }
